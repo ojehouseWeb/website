@@ -1,11 +1,10 @@
 /* ==========================================================================
    OJEHOUSE — style.css
 
-   [디스플레이 폰트 교체 안내]
+   [디스플레이 폰트]
    로고(.hero-logo / .footer-logo)와 섹션 영문 소제목(.sec-title .en),
    일본 팝업 도시명(.city-name)은 --font-display / --display-track 두 변수만 바라봅니다.
-   Prata 또는 DM Serif Display로 바꾸려면 :root 안의 "디스플레이 폰트" 블록에서
-   주석 처리된 줄 중 원하는 것 하나만 활성화하면 전체가 함께 바뀝니다.
+   폰트를 바꾸려면 :root 안의 이 두 변수만 수정하면 전체가 함께 바뀝니다.
    (본문·한글 Pretendard, 모노 IBM Plex Mono, 서브 세리프 Cormorant Garamond는 영향 없음)
    ========================================================================== */
 
@@ -28,11 +27,8 @@
   --maxw:1100px;
   --ease:cubic-bezier(.22,1,.36,1);
 
-  /* ── 디스플레이 폰트 : 아래 3줄 중 한 줄만 활성화 ───────────────────── */
+  /* ── 디스플레이 폰트 ── */
   --font-display:'Italiana','Cormorant Garamond',serif;          --display-track:.09em;
-  /* --font-display:'Prata','Cormorant Garamond',serif;             --display-track:.03em; */
-  /* --font-display:'DM Serif Display','Cormorant Garamond',serif;  --display-track:.01em; */
-  /* ──────────────────────────────────────────────────────────────────── */
 }
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
@@ -185,7 +181,7 @@ section{ padding:104px 0; position:relative; }
   letter-spacing:var(--display-track);
   color:var(--ink); margin:12px 0 12px;
 }
-/* Italiana / Prata에는 정식 이탤릭이 없어 합성 기울임 대신 색으로만 강조합니다. */
+/* Italiana에는 정식 이탤릭이 없어 합성 기울임 대신 색으로만 강조합니다. */
 .sec-title .en em{ font-style:normal; color:var(--rose-deep); }
 .sec-title .ko{ font-size:14.5px; color:var(--ink-soft); margin:0; }
 
