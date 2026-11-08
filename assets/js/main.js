@@ -91,7 +91,8 @@ var I18N = {
     modalDesc: '현재 온라인 예약 시스템은 준비 중입니다.<br>편하신 채널로 문의해 주시면 일정과 예약금 안내를 도와드립니다.',
     modalSteps: '문의 → 일정 확인 → <strong>예약금 입금(계좌/PayPal)</strong> → 입금 확인 후 <strong>예약 확정</strong><br>시술 주의사항은 확정 시 함께 안내드립니다.',
     external: '채널 선택 시 외부 서비스로 이동합니다.',
-    badge: '추천'
+    badge: '추천',
+    wechatHint: 'WeChat 앱의 스캔으로 QR을 찍어 친구 추가해 주세요.<br>휴대폰으로 보고 계시면 QR 이미지를 저장한 뒤, WeChat 스캔 화면에서 앨범으로 불러오세요.'
   },
   en: {
     heroSub: 'When your brow & lip design is complete,<br>the real you begins.',
@@ -142,7 +143,8 @@ var I18N = {
     modalDesc: 'Online booking is coming soon.<br>Contact us via your preferred channel for dates and deposit guidance.',
     modalSteps: 'Inquiry → Date check → <strong>Deposit (bank/PayPal)</strong> → <strong>Confirmed</strong> after verification.<br>Aftercare instructions are shared upon confirmation.',
     external: 'Selecting a channel opens an external service.',
-    badge: 'Recommended'
+    badge: 'Recommended',
+    wechatHint: 'Scan this QR code with WeChat to add us as a friend.<br>On a phone, save the image, then open WeChat Scan and choose it from your album.'
   },
   ja: {
     heroSub: '眉とリップのデザインが完成したとき、<br>本当のあなたが始まります。',
@@ -192,7 +194,8 @@ var I18N = {
     modalDesc: 'オンライン予約は準備中です。<br>ご都合の良いチャンネルからお問い合わせください。',
     modalSteps: 'お問い合わせ → 日程確認 → <strong>予約金のお支払い（振込/PayPal）</strong> → 確認後<strong>予約確定</strong><br>施術の注意事項は確定時にご案内します。',
     external: 'チャンネル選択で外部サービスに移動します。',
-    badge: 'おすすめ'
+    badge: 'おすすめ',
+    wechatHint: 'WeChatのスキャンでQRコードを読み取り、友だち追加してください。<br>スマートフォンでご覧の場合は画像を保存し、WeChatのスキャン画面でアルバムから読み込んでください。'
   },
   zh: {
     heroSub: '当眉唇设计完成之时，<br>真正的你由此开始。',
@@ -242,11 +245,12 @@ var I18N = {
     modalDesc: '在线预约系统正在筹备中。<br>请通过方便的渠道咨询，我们将为您安排日程与定金事宜。',
     modalSteps: '咨询 → 确认日程 → <strong>支付定金（转账/PayPal）</strong> → 确认后<strong>预约确定</strong><br>操作注意事项将在确定时一并告知。',
     external: '选择渠道后将跳转至外部服务。',
-    badge: '推荐'
+    badge: '推荐',
+    wechatHint: '请使用微信"扫一扫"扫描二维码添加好友。<br>手机浏览时，可长按保存图片，再在微信"扫一扫"中从相册选取。'
   }
 };
 // 기획서 04·08: 언어별 핵심 CTA 분기
-var PRIMARY = { ko: 'naver', en: 'whatsapp', ja: 'line', zh: 'wechat' };
+var PRIMARY = { ko: 'kakao', en: 'whatsapp', ja: 'line', zh: 'wechat' };
 var LANG_CODE = { ko: 'ko', en: 'en', ja: 'ja', zh: 'zh-Hans' };
 
 // 일본 팝업 도시 카드 생성 — 텍스트는 data-i18n 으로 표시해 언어 전환에 그대로 따라간다
@@ -383,6 +387,16 @@ document.querySelectorAll('.faq-q').forEach(function(btn) {
     var panel = document.getElementById(btn.getAttribute('aria-controls'));
     btn.setAttribute('aria-expanded', String(!expanded));
     panel.style.maxHeight = expanded ? '0px' : panel.scrollHeight + 'px';
+  });
+});
+
+// ===== WeChat QR 펼치기 =====
+document.querySelectorAll('.channel-qr > button').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
   });
 });
 

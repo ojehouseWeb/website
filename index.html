@@ -285,11 +285,20 @@
           <li data-i18n="s4">계좌 또는 PayPal로 예약금을 입금합니다.</li>
           <li data-i18n="s5">입금 확인 후 예약이 최종 확정됩니다.</li>
         </ol>
+        <!-- 문의 채널 (예약 모달에도 같은 목록이 있으니 함께 수정하세요) -->
         <div class="resv-channels" data-channels>
-          <a href="#" class="channel-row" data-ch="naver"><span>네이버플레이스</span><span class="country">KOREA</span></a>
-          <a href="#" class="channel-row" data-ch="whatsapp"><span>WhatsApp</span><span class="country">ENGLISH</span></a>
-          <a href="#" class="channel-row" data-ch="line"><span>LINE</span><span class="country">日本語</span></a>
-          <a href="#" class="channel-row" data-ch="wechat"><span>WeChat</span><span class="country">中文</span></a>
+          <a href="https://pf.kakao.com/_bVmin" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="kakao"><span>카카오톡 채널</span><span class="country">KOREA</span></a>
+          <a href="https://naver.me/5BwUF1Rz" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="naver"><span>네이버플레이스</span><span class="country">KOREA</span></a>
+          <a href="https://line.me/ti/p/UumA-LvNyq" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="line"><span>LINE</span><span class="country">日本語</span></a>
+          <a href="https://wa.me/qr/RLHV32F5RVF2A1" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="whatsapp"><span>WhatsApp</span><span class="country">ENGLISH</span></a>
+          <!-- WeChat은 웹 링크로 친구 추가가 안 되어 QR을 펼쳐 보여줍니다 -->
+          <div class="channel-qr" data-ch="wechat">
+            <button type="button" class="channel-row" aria-expanded="false" aria-controls="wechatQr1"><span>WeChat</span><span class="country">中文</span></button>
+            <div class="qr-panel" id="wechatQr1" hidden>
+              <img src="assets/img/qr-wechat.png" alt="오제하우스 WeChat 친구 추가 QR 코드" width="200" height="200" loading="lazy">
+              <p data-i18n="wechatHint">WeChat 앱의 스캔으로 QR을 찍어 친구 추가해 주세요.<br>휴대폰으로 보고 계시면 QR 이미지를 저장한 뒤, WeChat 스캔 화면에서 앨범으로 불러오세요.</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="resv-cta">
@@ -358,11 +367,19 @@
       <button type="button" class="modal-close" data-close-modal aria-label="닫기">&times;</button>
     </div>
     <p class="modal-desc"><span data-i18n="modalDesc">현재 온라인 예약 시스템은 준비 중입니다.<br>편하신 채널로 문의해 주시면 일정과 예약금 안내를 도와드립니다.</span><br><small class="ext-note" data-i18n="external">채널 선택 시 외부 서비스로 이동합니다.</small></p>
+    <!-- 문의 채널 (예약 섹션에도 같은 목록이 있으니 함께 수정하세요) -->
     <div class="modal-channels" data-channels>
-      <a href="#" class="channel-row" data-ch="naver"><span>네이버플레이스</span><span class="country">KOREA</span></a>
-      <a href="#" class="channel-row" data-ch="whatsapp"><span>WhatsApp</span><span class="country">ENGLISH</span></a>
-      <a href="#" class="channel-row" data-ch="line"><span>LINE</span><span class="country">日本語</span></a>
-      <a href="#" class="channel-row" data-ch="wechat"><span>WeChat</span><span class="country">中文</span></a>
+      <a href="https://pf.kakao.com/_bVmin" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="kakao"><span>카카오톡 채널</span><span class="country">KOREA</span></a>
+      <a href="https://naver.me/5BwUF1Rz" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="naver"><span>네이버플레이스</span><span class="country">KOREA</span></a>
+      <a href="https://line.me/ti/p/UumA-LvNyq" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="line"><span>LINE</span><span class="country">日本語</span></a>
+      <a href="https://wa.me/qr/RLHV32F5RVF2A1" target="_blank" rel="noopener noreferrer" class="channel-row" data-ch="whatsapp"><span>WhatsApp</span><span class="country">ENGLISH</span></a>
+      <div class="channel-qr" data-ch="wechat">
+        <button type="button" class="channel-row" aria-expanded="false" aria-controls="wechatQr2"><span>WeChat</span><span class="country">中文</span></button>
+        <div class="qr-panel" id="wechatQr2" hidden>
+          <img src="assets/img/qr-wechat.png" alt="오제하우스 WeChat 친구 추가 QR 코드" width="200" height="200" loading="lazy">
+          <p data-i18n="wechatHint">WeChat 앱의 스캔으로 QR을 찍어 친구 추가해 주세요.<br>휴대폰으로 보고 계시면 QR 이미지를 저장한 뒤, WeChat 스캔 화면에서 앨범으로 불러오세요.</p>
+        </div>
+      </div>
     </div>
     <div class="modal-steps">
       <span data-i18n="modalSteps">문의 → 일정 확인 → <strong>예약금 입금(계좌/PayPal)</strong> → 입금 확인 후 <strong>예약 확정</strong><br>시술 주의사항은 확정 시 함께 안내드립니다.</span>

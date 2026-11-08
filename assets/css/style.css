@@ -568,6 +568,15 @@ section{ padding:104px 0; position:relative; }
 }
 .channel-row:hover{ border-color:var(--rose); transform:translateY(-1px); }
 .channel-row .country{ margin-left:auto; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; }
+/* WeChat: 링크 대신 버튼 → 아래로 QR 펼침 */
+button.channel-row{ width:100%; font:inherit; font-size:14px; color:inherit; text-align:left; }
+.channel-qr .qr-panel{
+  margin-top:8px; padding:20px; text-align:center;
+  background:rgba(255,255,255,0.7); border:1px solid var(--glass-border); border-radius:var(--radius-s);
+}
+.channel-qr .qr-panel[hidden]{ display:none; }
+.channel-qr .qr-panel img{ width:180px; height:180px; margin:0 auto 12px; }
+.channel-qr .qr-panel p{ margin:0; font-size:12.5px; line-height:1.6; color:var(--ink-soft); }
 .resv-cta{ text-align:center; margin-top:48px; }
 
 .rec-badge{
