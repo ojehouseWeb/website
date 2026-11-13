@@ -31,7 +31,7 @@ var JAPAN_CITIES = [
 //   placeUrl : '크게 보기' 링크 주소. 네이버플레이스 등록 후에는
 //              https://map.naver.com/p/entry/place/{플레이스ID} 형태로 바꾸는 편이 정확합니다.
 var NAVER_MAP = {
-  keyId: '',
+  keyId: 'q22fxl7vj2',
   keyParam: 'ncpKeyId',
   lat: 37.5059195,   // 네이버플레이스 등록 좌표 (서울 강남구 봉은사로 129)
   lng: 127.028339,
